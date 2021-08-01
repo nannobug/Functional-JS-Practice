@@ -198,3 +198,68 @@ var toObject2 = function(products) {
   });
 };
 console.log(toObject2(products));
+
+// filter
+
+// 1 Write a function that takes an array of numbers and returns an array of all numbers less than 10:
+
+var lessThanTen = function(numbers) {
+  // your code here
+  return numbers.filter(function(number) {
+    return number < 10;
+  });
+};
+
+console.log(lessThanTen([1, 5, 12, 18, 94, 3, 16])); // => [1, 5, 3]
+
+// 2 Write a function that takes an array of numbers and returns an array of just the even numbers:
+var onlyEvens = function(numbers) {
+  // your code here
+  return numbers.filter(function(number) {
+    return number % 2 === 0;
+  });
+};
+
+console.log(onlyEvens([25, 16, 12, 99, 8, 37])); // => [16, 12, 8]
+
+
+// 3 Write a function that takes an array of strings and returns an array of just the words that have an odd number of characters:
+
+var onlyOddWords = function(words) {
+  // your code here
+  return words.filter(function(word) {
+    return word.length % 2 === 1;
+  })
+};
+
+console.log(onlyOddWords(['hello', 'my', 'name', 'is', 'alexa'])); // => ['hello', 'alexa']
+
+
+// 4 Write a function that takes an array of words and returns an array of just the words that are pluralized (end with 's'):
+
+var onlyPlural = function(words) {
+  // your code here
+  return words.filter(function(word) {
+    return word[word.length - 1].toLowerCase() === 's'
+  })
+};
+
+console.log(onlyPlural(['dogs', 'cat', 'humans', 'kyle'])); // => ['dogs', 'humans']
+
+
+//5 Write a function that takes an array of characters and returns an array of just the characters that are superheroes:
+
+var characters = [
+  { character: 'Superman', hero: true },
+  { character: 'Sinestro', hero: false },
+  { character: 'Wonder Woman', hero: true },
+  { character: 'Lex Luthor', hero: false },
+  { character: 'Green Lantern', hero: true }
+]
+
+var isHero = function(chars) {
+  // your code here
+  return chars.filter(function(char) {
+    return char.hero;
+  })
+};

@@ -186,3 +186,15 @@ console.log(toObject(products)); // => [
 //   { name: 'Peppermint Poppers', price: 0.88, quantity: 1 },
 //   { name: 'Banana Bunches', price: 2.33, quantity: 2 }
 // ]
+
+// 6 Solution - improved readability
+var toObject2 = function(products) {
+  return products.map(function(product) {
+    return {
+      'name': product[0],
+      'price': product[1],
+      'quantity': product[2]
+    };
+  });
+};
+console.log(toObject2(products));

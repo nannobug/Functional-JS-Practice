@@ -263,3 +263,64 @@ var isHero = function(chars) {
     return char.hero;
   })
 };
+
+// _.reduce
+
+// 1 Write a function that takes an array of numbers and returns the sum of all the numbers:
+
+var sum = function(numbers) {
+  // your code here
+  return numbers.reduce(function(accumulator, currentValue) {
+    return accumulator + currentValue;
+  })
+};
+
+console.log(sum([2, 4, 6])); // => 12
+
+// 2 Write a function that takes an array of numbers and returns the product of all the numbers:
+
+var product = function(numbers) {
+  // your code here
+  return numbers.reduce(function(accumulator, currentValue) {
+    return accumulator * currentValue;
+  })
+};
+
+console.log(product([2, 4, 6])); // => 48
+
+// 3 Write a function that takes an array of words and returns a sentence (single string) with all the element strings concatenated together:
+
+var stringConcat = function(strings) {
+  // your code here
+  return strings.reduce(function(accumulator, currentValue) {
+    return accumulator + ' ' + currentValue;
+  });
+};
+
+console.log(stringConcat(['Hello', 'my', 'name', 'is', 'Alexandra'])); // => 'Hello my name is Alexandra'
+
+// 4 Write a function that takes an array of users and returns an object with keys that are the users' names and values that are their email addresses:
+
+var users = [
+  { fullName: 'George Washington', email: 'george@us.gov' },
+  { fullName: 'John Adams', email: 'john@us.gov' },
+  { fullName: 'Thomas Jefferson', email: 'thomas@us.gov' },
+  { fullName: 'James Madison', email: 'james@us.gov' }
+]
+
+var createEmailObject = function(users) {
+  // your code
+ var accumulator = {};
+  return users.reduce(function(accumulator, currentValue) {
+    accumulator[currentValue.fullName] = currentValue.email;
+    return accumulator;
+  }, {});
+};
+
+console.log(createEmailObject(users)); // => {
+//   'George Washington': 'george@us.gov',
+//   'John Adams': 'john@us.gov',
+//   'Thomas Jefferson': 'thomas@us.gov',
+//   'James Madison': 'james@us.gov'
+// }
+
